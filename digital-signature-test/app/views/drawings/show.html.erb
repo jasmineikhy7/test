@@ -1,0 +1,39 @@
+<h1><%= @drawing.title %></h1>
+<div class="space-layout">
+
+  <div class="drawing">
+    <div class="edit-icons">
+      <% if user_signed_in? %><% if @drawing.user.id == current_user.id || current_user.admin? %><%= link_to 'Edit', edit_drawing_path(@drawing), :class => 'fa fa-pencil-square-o' %> <%= link_to 'Delete', drawing_path(@drawing), method: :delete, :class => 'fa fa-trash-o' %><% end %><% end %> <%= link_to 'Add a Note', new_drawing_note_path(@drawing), :class => 'fa fa-comment' %>
+    </div>
+    <img src="<%= @drawing.image %>">
+  </div>
+
+  <div class="location-details">
+    <% if @drawing.location.present? %>
+      <li class="fa fa-map-marker"><strong>Location:</strong> <%= @drawing.location %></li>
+      <% end %>
+        <% if Favorite.find_by(user: current_user, drawing: @drawing) %>
+          <%= link_to "&hearts;".html_safe, remove_favorite_drawing_path(@drawing), method: :delete, class: "fav" %>
+        <% else %>
+          <%= link_to "&hearts;".html_safe, add_favorite_drawing_path(@drawing), method: :post, class: "no-fav" %>
+
+      <% end %>
+  </div>
+
+  <% if @drawing.description.present? %>
+    <div class="description">
+      <h2>Description</h2>
+      <p><%= @drawing.description %></p>
+    </div>
+    <% end %>
+
+  <% if @drawing.notes.present? %>
+    <h2>Notes</h2>
+    <% @drawing.notes.each do |note| %>
+      <div class="note">
+        <p><strong><%= link_to note.title, drawing_note_path(@drawing, note) %></strong></p>
+        <p><%= note.body %></p>
+      </div>
+    <% end %>
+<% end %>
+</div>

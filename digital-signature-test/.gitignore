@@ -1,0 +1,9 @@
+.DS_Store
+/tmp/*
+/log/*
+/public/uploads/*
+/log/development.log
+
+# Ignore application configuration
+/config/application.yml
+/config/initializers/devise.rb

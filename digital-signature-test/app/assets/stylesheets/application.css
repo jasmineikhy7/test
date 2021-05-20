@@ -1,0 +1,559 @@
+/*
+ *= require font-awesome
+ */
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400, 700");
+@import url("https://fonts.googleapis.com/css?family=Catamaran:300,400,500,700");
+
+canvas {
+  border: 1px solid black;
+  cursor: default;
+}
+
+/* Header and Nav */
+/*header, footer {
+   background: #ff8080;
+ }*/
+h1#logo {
+  margin: 0;
+  display: inline-block;
+  padding: 0;
+  border-bottom: 1px solid #ff8080;
+}
+#logo a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+nav {
+  padding-top: 15px;
+  float: right;
+  font-family: "Quicksand", sans-serif;
+  text-transform: lowercase;
+}
+nav a {
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+nav .active {
+  color: gray;
+}
+
+.navbar {
+  position: fixed;
+  background: white;
+  width: 100%;
+  top: 0;
+  left: 0;
+  color: black;
+  font-family: sans-serif;
+  transition: 0.3s;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid #ddd;
+  z-index: 20;
+}
+
+.welcome.index .navbar {
+  background: transparent;
+  border-bottom: 0px solid #ddd;
+}
+
+.welcome.index .navbar.scrolled {
+  background-color: white;
+  transition: 0.3s;
+  border-bottom: 1px solid #ddd;
+  z-index: 20;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: auto;
+  right: 0;
+  background-color: #f1f1f1;
+  min-width: 80px;
+  margin-top: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  font-size: 0.8em;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-visible {
+  display: block;
+  background-color: #ddd;
+}
+
+#profile:hover {
+  cursor: pointer;
+}
+
+/* Mobile Menu */
+.mobile-icon,
+.mobile-menu {
+  display: none;
+}
+
+/* Main Content */
+body {
+  padding: 0;
+  margin: 0;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "Catamaran", sans-serif;
+}
+.content {
+  padding: 20px;
+  margin-top: 80px;
+  min-height: 80vh;
+}
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Quicksand", sans-serif;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+/* Design Elements for Functionality */
+.main-nav .fa:before {
+  margin: 0;
+  padding: 10px 0;
+  font-size: 1em;
+}
+
+.fa:before {
+  margin-right: 5px;
+  margin-left: 20px;
+}
+/*plus sign styling */
+.fa-plus-circle:before {
+  margin-left: 0 !important;
+}
+
+/* Homepage */
+body.welcome {
+  background: none;
+}
+.welcome-banner {
+  background: url("/images/sketch.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 680px;
+  padding-top: 30px;
+}
+.welcome-text {
+  padding-top: 14%;
+}
+.welcome-text h2 {
+  font-size: 3.2em;
+  padding: 0;
+  margin: 0;
+  font-weight: 300;
+}
+.welcome-text h3 {
+  font-size: 2.6em;
+  padding: 0;
+  margin: 0;
+  font-weight: 300;
+}
+.welcome .content {
+  background: transparent;
+}
+
+/* Drawing Page */
+input#stroke-width {
+  width: 80px;
+  padding: 3px;
+  margin: 0 10px;
+  border: none;
+}
+
+input#color {
+  width: 60px;
+  height: 40px;
+  border: none;
+}
+
+input#clear {
+  height: 40px;
+  width: 60px;
+  border: none;
+}
+.controls {
+  margin-top: -10px;
+}
+
+.edit-icons {
+  text-align: right;
+}
+.edit-icons a {
+  color: black;
+}
+.space-layout {
+  max-width: 600px;
+  margin: auto;
+}
+
+.location-details {
+  margin-top: -10px;
+  color: gray;
+}
+
+.description {
+  margin-top: 10px;
+  padding-top: 20px;
+  border-bottom: 1px solid #ff8080;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+canvas#cvs {
+  cursor: pointer;
+}
+
+/* No Drawings */
+.no-drawings {
+  border: 1px dashed #ddd;
+}
+
+/* Rows */
+.row {
+  clear: both;
+  float: none;
+  padding: 2rem 0 3rem 0;
+}
+
+.col-3 {
+  display: inline-block;
+  width: 28%;
+  padding: 20px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.col-3 h3 {
+  margin-bottom: 0;
+}
+
+.col-3 p {
+  font-size: 0.9em;
+  color: #808080;
+}
+
+.col-3 img {
+  max-width: 70px;
+  opacity: 0.5;
+}
+
+/* Note Page */
+.detail-page {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Map Grid */
+.map-grid img {
+  width: 100%;
+  max-width: 250px;
+}
+
+.map-grid {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+}
+
+.map-grid p {
+  margin-top: -10px;
+}
+
+.map-grid h3 {
+  font-size: 20px;
+  margin-top: -10px;
+}
+.map-grid a {
+  color: black;
+}
+.map-grid a:hover {
+  opacity: 0.8;
+}
+
+.all-maps {
+  padding-top: 30px;
+  text-align: center;
+}
+
+/* Notes */
+.note {
+  max-width: 600px;
+  margin: auto;
+  border-bottom: 1px solid #b3b3b3;
+}
+
+/* Get Started Button */
+a.get-started {
+  border: 1px solid #ff4d4d;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-left: 0.5em;
+  outline: medium none;
+  padding: 0.5em 0.6em;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.01);
+  transition: all 0.2s ease 0s;
+  vertical-align: middle;
+  color: #ff4d4d;
+  width: 250px;
+  display: block;
+  margin: 0 auto;
+}
+a.get-started:hover {
+  background: #ff4d4d;
+  border: 1px solid #ff4d4d;
+  color: white;
+}
+
+/* Form Styling */
+.form-block {
+  max-width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+}
+.form-block input,
+.form-block select {
+  height: 30px;
+}
+.form-block textarea {
+  height: 60px;
+}
+
+.form-block input,
+.form-block textarea,
+.form-block select {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  padding: 0 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form-block .form-warning {
+  border: 1px solid red;
+}
+input[type="radio"] {
+  width: auto;
+  height: auto;
+}
+
+.form-block input[type="submit"] {
+  border: 1px solid white;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.01);
+  transition: all 0.2s ease 0s;
+  background: #ff8080;
+  color: white;
+  padding: 0 10px 0 10px;
+  width: auto;
+  min-width: 250px;
+  cursor: pointer;
+}
+.form-block input[type="submit"]:hover {
+  background: #ff4d4d;
+  border: 1px solid #ff4d4d;
+  color: white;
+}
+
+.form-block input[type="checkbox"] {
+  width: auto;
+}
+.form-block .field {
+  margin-bottom: 15px;
+}
+
+/* Notification Messages */
+.flash {
+  border-bottom: 1px solid #ddd;
+}
+
+.alert {
+  color: red;
+}
+.notice {
+  color: blue;
+}
+#error_explanation {
+  color: red;
+}
+
+/* Favoriting */
+a.fav {
+  text-decoration: none;
+  color: red;
+  padding-left: 10px;
+}
+
+a.no-fav {
+  text-decoration: none;
+  color: grey;
+  padding-left: 10px;
+}
+
+.fav:visited,
+.no-fav:visited {
+  text-decoration: none;
+}
+
+/* Profile Page */
+.feature-icon {
+  display: inline-block;
+  max-width: 300px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+}
+.feature-icon img {
+  display: block;
+  margin: auto;
+  max-width: 80px;
+}
+.icon-row {
+  text-align: center;
+}
+.feature img {
+  max-width: 50px;
+}
+
+/* Footer */
+footer {
+  background-color: #f2f2f2;
+  border-top: 1px solid #e6e6e6;
+  overflow: hidden;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+footer a {
+  color: black;
+  font-weight: bold;
+}
+
+.create-today {
+  padding: 3rem 0 4rem 0;
+  border-top: 1px solid #e6e6e6;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+/* Styles for mobile devices */
+@media (max-width: 900px) {
+  img {
+    max-width: 100%;
+  }
+  canvas#cvs {
+    max-width: 100%;
+  }
+
+  .col-3 {
+    display: block;
+    width: 100%;
+    padding: 0;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  /* Mobile Menu Styles */
+
+  .mobile-icon {
+    display: block;
+  }
+  .mobile-icon img {
+    float: right;
+    height: 30px;
+    margin-top: -35px;
+    padding-right: 20px;
+    width: 30px;
+  }
+  .mobile-menu a {
+    text-transform: lowercase;
+    display: block;
+    clear: both;
+  }
+  .mobile-navigation {
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  /* Homepage banner */
+  .welcome-banner {
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 280px;
+    padding-top: 30px;
+  }
+
+  .welcome-text {
+    text-align: center;
+    padding-top: 10%;
+  }
+
+  .welcome-text h2 {
+    font-size: 2.2em;
+  }
+  .welcome-text h3 {
+    font-size: 1.6em;
+  }
+}

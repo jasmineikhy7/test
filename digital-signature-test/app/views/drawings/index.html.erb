@@ -1,0 +1,19 @@
+<div class="space-layout">
+    <h1>Featured Drawings</h1>
+      <div class="icon-row">
+        <div class="feature-icon feature">
+          <img src="/images/picture-frame.png" alt="Featured Drawings">
+        </div>
+      </div>
+  <div class="all-maps">
+    <%= render 'layouts/sort' %>
+    <% @drawings.each do |drawing| %>
+      <% if drawing.showcase == true %>
+      <div class="map-grid">
+        <%= link_to (image_tag drawing.image), drawing_path(drawing) %>
+        <h3><%= link_to drawing.title, drawing_path(drawing) %></h3>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
